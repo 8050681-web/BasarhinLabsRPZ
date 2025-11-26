@@ -4,6 +4,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
+
 
 /// <summary>
 /// This program was designed for test purposes only
@@ -49,6 +51,7 @@ namespace EchoTspServer
             Console.WriteLine("Server shutdown.");
         }
 
+        [ExcludeFromCodeCoverage]
         private static async Task HandleClientAsync(TcpClient client, CancellationToken token)
         {
             using (NetworkStream stream = client.GetStream())
